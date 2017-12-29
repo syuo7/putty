@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build: 
+    docker: 
+      - image: syuo7/circleci_test
+    steps:
+      - run:
+        name: command
+        command: |
+          ./mkunxarc.sh
+          cd unix
+          ./configure
+          make -f Makefile.gtk
+        
