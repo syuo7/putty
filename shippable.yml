@@ -9,11 +9,21 @@ branch:
 
 build:
     pre_ci_boot:
-       image_name: localhost:5000/ubuntu1
-       image_tag: 16.04
+       image_name: syuo7/circleci_test
+       image_tag: latest
        pull: true
+       env: taeil=hansome
     
     ci:
+        - ./mkunxarc.sh
         - cd unix
-        - make -f Makefile.gtk clean
         - make -f Makefile.gtk
+        - ls -al
+
+integrations:
+    hub:
+      - integrationName: docker-hub
+      - type: dockereRegistryLogin
+      branches:
+        only:
+          - master
