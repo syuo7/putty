@@ -1,5 +1,4 @@
-language: c
-
+language: none
 	
 build:
     pre_ci_boot:
