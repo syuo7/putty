@@ -3,17 +3,12 @@ language: c
 compiler:
     - gcc
 	
-branch:
-    only:
-        - master
-
 build:
     pre_ci_boot:
        image_name: syuo7/circleci_test
        image_tag: latest
        pull: true
        env: taeil=hansome
-    
     ci:
         - ./mkunxarc.sh
         - cd unix
@@ -21,9 +16,9 @@ build:
         - ls -al
 
 integrations:
-    hub:
-      - integrationName: docker-hub
-        type: dockereRegistryLogin
-        branches:
-          only:
-            - master
+  hub:
+    - integrationName: docker-hub
+      type: dockerRegistryLogin
+      branches:
+        only:
+          - master
