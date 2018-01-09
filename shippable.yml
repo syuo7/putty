@@ -5,9 +5,9 @@ build:
        image_name: syuo7/circleci_test
        image_tag: latest
        pull: true
-       env: taeil=hansome
-    ci:
-        - cd putty
+    ci: 
+        - pwd
+        - ls -al
         - ./mkunxarc.sh
         - cd unix
         - make -f Makefile.gtk
