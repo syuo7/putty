@@ -24,6 +24,6 @@ integrations:
     hub:
       - integrationName: docker-hub
       - type: dockereRegistryLogin
-      branches:
-        only:
-          - master
+        branches:
+          only:
+            - master
