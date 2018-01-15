@@ -9,5 +9,5 @@ jobs:
       - run: ls -al
       - run: ./mkunxarc.sh
       - run: cd unix
-      - rnn: make -f Makefile.gtk
+      - run: make -f Makefile.gtk
       - run: ls -al
