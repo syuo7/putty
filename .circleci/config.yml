@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: syuo7/circleci_test
+    steps:
+      - checkout
+      - run: pwd
+      - run: ls -al
+      - run: ./mkunxarc.sh
+      - run: cd unix
+      - rnn: make -f Makefile.gtk
+      - run: ls -al
